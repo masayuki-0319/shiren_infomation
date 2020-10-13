@@ -42,6 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
+      floatingActionButton: _buildActionButton(),
+    );
+  }
+
+  Widget _buildActionButton() {
+    return FloatingActionButton(
+      onPressed: () {},
+      child: Icon(Icons.search),
+      backgroundColor: Colors.green,
     );
   }
 
@@ -53,10 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildBody() {
-    return Center(
-      child: Scrollbar(
-        child: _futureListView(),
-      ),
+    return Scrollbar(
+      child: _futureListView(),
     );
   }
 
