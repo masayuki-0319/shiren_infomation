@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "つるはし",
+    "itemType": "sword",
+    "askPrice": 240,
+    "sellPrice": 100,
+    "description": "ダンジョンの壁を掘れる",
+    "attackNumber": 1,
+    "defenseNumber": null,
+    "_dungeonTableMountain": true,
+    "_dungeonKakejikuUra": true,
+    "_dungeonSyokujin": false,
+    "_dungeonFei": true
+  },
+  {
+    "id": 2,
+    "name": "こわれないつるはし",
+    "itemType": "sword",
+    "askPrice": 240,
+    "sellPrice": 100,
+    "description": "ダンジョンの壁を掘れる",
+    "attackNumber": 1,
+    "defenseNumber": null,
+    "_dungeonTableMountain": false,
+    "_dungeonKakejikuUra": false,
+    "_dungeonSyokujin": false,
+    "_dungeonFei": false
+  },
+  {
+    "id": 3,
+    "name": "こん棒",
+    "itemType": "sword",
+    "askPrice": 240,
+    "sellPrice": 80,
+    "description": "なし",
+    "attackNumber": 2,
+    "defenseNumber": null,
+    "_dungeonTableMountain": true,
+    "_dungeonKakejikuUra": true,
+    "_dungeonSyokujin": false,
+    "_dungeonFei": true
+  },
+  {
+    "id": 4,
+    "name": "必中の剣",
+    "itemType": "sword",
+    "askPrice": 10000,
+    "sellPrice": 5000,
+    "description": "攻撃が必ず当たる",
+    "attackNumber": 2,
+    "defenseNumber": null,
+    "_dungeonTableMountain": true,
+    "_dungeonKakejikuUra": false,
+    "_dungeonSyokujin": false,
+    "_dungeonFei": true
+  },
+  {
+    "id": 5,
+    "name": "妖刀かまいたち",
+    "itemType": "sword",
+    "askPrice": 5000,
+    "sellPrice": 2000,
+    "description": "前方3方向に攻撃",
+    "attackNumber": 3,
+    "defenseNumber": null,
+    "_dungeonTableMountain": true,
+    "_dungeonKakejikuUra": false,
+    "_dungeonSyokujin": false,
+    "_dungeonFei": true
+  }
+]
