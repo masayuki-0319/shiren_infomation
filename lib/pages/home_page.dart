@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:ver_1_by_sfc/ver_1_by_sfc.dart';
+import 'package:flappy_search_bar/flappy_search_bar.dart';
+
+import '../widgets/item_list_widget.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -42,15 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
-      floatingActionButton: _buildActionButton(),
-    );
-  }
-
-  Widget _buildActionButton() {
-    return FloatingActionButton(
-      onPressed: () {},
-      child: Icon(Icons.search),
-      backgroundColor: Colors.green,
     );
   }
 
@@ -63,7 +57,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildBody() {
     return Scrollbar(
-      child: Text('dummy text'),
+      child: _buildSearchBar(),
     );
+  }
+
+  Widget _buildSearchBar() {
+    return SearchBar<Item>(
+        onSearch: search,
+        minimumChars: 2,
+        onItemFound: (Item item, int index) {
+          return singleItem(item);
+        });
+  }
+
+  Future<List<Item>> search(String search) async {
+    try {
+      final parseSearch = int.parse(search);
+      final searchItems = await items;
+
+      var searchResult = searchItems
+          .where((item) =>
+              (item.askPrice == parseSearch) || (item.sellPrice == parseSearch))
+          .toList();
+      return searchResult;
+    } catch (e) {
+      return [];
+    }
   }
 }
