@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:ver_1_by_sfc/ver_1_by_sfc.dart';
 
+import '../widgets/item_list_widget.dart';
+
 class ItemListPage extends StatefulWidget {
   ItemListPage({Key key, this.items}) : super(key: key);
 
@@ -10,7 +12,6 @@ class ItemListPage extends StatefulWidget {
   @override
   _ItemListPageState createState() => _ItemListPageState();
 }
-
 
 class _ItemListPageState extends State<ItemListPage> {
   Future<List<Item>> items;
@@ -50,26 +51,12 @@ class _ItemListPageState extends State<ItemListPage> {
         future: items,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              itemCount: snapshot.data.length,
-              itemBuilder: (context, index) => _itemTile(snapshot.data[index]),
-            );
+            return itemListView(snapshot.data);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           } else {
             return null;
           }
         });
-  }
-
-  Widget _itemTile(Item _item) {
-    return ListTile(
-      leading: ExcludeSemantics(
-        child: CircleAvatar(child: Text('${_item.id}')),
-      ),
-      title: Text(_item.name),
-      subtitle: Text('買値: ${_item.askPrice}  売値: ${_item.sellPrice}'),
-    );
   }
 }

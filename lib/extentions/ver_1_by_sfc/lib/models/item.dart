@@ -37,30 +37,30 @@ class Item {
   bool dungeonFei;
 
   factory Item.fromJson(Map<String, dynamic> json) => Item(
-      id: json["id"],
-      name: json["name"],
-      itemType: json["itemType"],
-      askPrice: json["askPrice"],
-      sellPrice: json["sellPrice"],
-      description: json["description"],
-      attackNumber: json["attackNumber"],
-      defenseNumber: json["defenseNumber"],
-      dungeonTableMountain: json["_dungeonTableMountain"],
-      dungeonKakejikuUra: json["_dungeonKakejikuUra"],
-      dungeonSyokujin: json["_dungeonSyokujin"],
-      dungeonFei: json["_dungeonFei"],);
+      id: json['id'],
+      name: json['name'],
+      itemType: json['itemType'],
+      askPrice: json['askPrice'],
+      sellPrice: json['sellPrice'],
+      description: json['description'],
+      attackNumber: json['attackNumber'],
+      defenseNumber: json['defenseNumber'],
+      dungeonTableMountain: json['_dungeonTableMountain'],
+      dungeonKakejikuUra: json['_dungeonKakejikuUra'],
+      dungeonSyokujin: json['_dungeonSyokujin'],
+      dungeonFei: json['_dungeonFei'],);
 
   Map<String, dynamic> toJson() => {
-      "id": id,
-      "name": name,
-      "itemType": itemType,
-      "askPrice": askPrice,
-      "sellPrice": sellPrice,
-      "description": description,
-      "attackNumber": attackNumber,
-      "defenseNumber": defenseNumber,
-      "_dungeonTableMountain": dungeonTableMountain,
-      "_dungeonKakejikuUra": dungeonKakejikuUra,
-      "_dungeonSyokujin": dungeonSyokujin,
-      "_dungeonFei": dungeonFei,};
+      'id': id,
+      'name': name,
+      'itemType': itemType,
+      'askPrice': askPrice,
+      'sellPrice': sellPrice,
+      'description': description,
+      'attackNumber': attackNumber,
+      'defenseNumber': defenseNumber,
+      '_dungeonTableMountain': dungeonTableMountain,
+      '_dungeonKakejikuUra': dungeonKakejikuUra,
+      '_dungeonSyokujin': dungeonSyokujin,
+      '_dungeonFei': dungeonFei,};
 }
