@@ -63,35 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _buildBody() {
     return Scrollbar(
-      child: _futureListView(),
-    );
-  }
-
-  FutureBuilder<List<Item>> _futureListView() {
-    return FutureBuilder<List<Item>>(
-        future: items,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.builder(
-              padding: const EdgeInsets.symmetric(vertical: 8),
-              itemCount: snapshot.data.length,
-              itemBuilder: (context, index) => _itemTile(snapshot.data[index]),
-            );
-          } else if (snapshot.hasError) {
-            return Text('${snapshot.error}');
-          } else {
-            return null;
-          }
-        });
-  }
-
-  Widget _itemTile(Item _item) {
-    return ListTile(
-      leading: ExcludeSemantics(
-        child: CircleAvatar(child: Text('${_item.id}')),
-      ),
-      title: Text(_item.name),
-      subtitle: Text('買値: ${_item.askPrice}  売値: ${_item.sellPrice}'),
+      child: Text('dummy text'),
     );
   }
 }
