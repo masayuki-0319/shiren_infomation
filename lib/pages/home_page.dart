@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:ver_1_by_sfc/ver_1_by_sfc.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
@@ -17,27 +14,13 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-Future<List<Item>> fetchItemList() async {
-  final response = await rootBundle
-      .loadString('lib/extentions/ver_1_by_sfc/assets/data/item_list.json');
-
-  if (response.isNotEmpty) {
-    final jsonArray = json.decode(response).cast<Map<String, dynamic>>()
-        as List<Map<String, dynamic>>;
-
-    return jsonArray.map((json) => Item.fromJson(json)).toList();
-  } else {
-    return null;
-  }
-}
-
 class _MyHomePageState extends State<MyHomePage> {
-  Future<List<Item>> items;
+  List<Item> items;
 
   @override
   void initState() {
     super.initState();
-    items = fetchItemList();
+    items = itemList.map((json) => Item.fromJson(json)).toList();;
   }
 
   @override
@@ -73,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<List<Item>> search(String search) async {
     try {
       final parseSearch = int.parse(search);
-      final searchItems = await items;
+      final searchItems = items;
 
       var searchResult = searchItems
           .where((item) =>

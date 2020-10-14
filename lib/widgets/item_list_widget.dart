@@ -24,8 +24,8 @@ Widget _buildLeading(Item _item) {
       fit: BoxFit.cover);
 
   return ExcludeSemantics(
-    child: CircleAvatar(
-      child: itemIcon,
-      backgroundColor: Colors.transparent,
-      ));
+      child: CircleAvatar(
+    child: itemIcon,
+    backgroundColor: Colors.transparent,
+  ));
 }
