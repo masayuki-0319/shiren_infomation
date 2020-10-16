@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
-import 'ver_1_by_sfc.dart';
+import '../ver_1_by_sfc.dart';
 
 // assets から読み込む場合
 Future<List<Item>> fetchItemList() async {
