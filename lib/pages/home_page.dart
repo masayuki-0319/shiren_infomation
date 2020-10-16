@@ -15,12 +15,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List _items;
   List<Item> items;
 
   @override
   void initState() {
     super.initState();
-    items = itemList.map((json) => Item.fromJson(json)).toList();;
+    _items = itemList
+        ..addAll(addedCaneList)
+        ..addAll(addedCrockList)
+        ..addAll(addedWeaponList);
+    items = _items.map((json) => Item.fromJson(json)).toList();
   }
 
   @override
