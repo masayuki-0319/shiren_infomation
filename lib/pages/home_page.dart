@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return SearchBar<Item>(
         onSearch: search,
         minimumChars: 2,
+        hintText: '売値 または 買値を入力してください',
         onItemFound: (Item item, int index) {
           return singleItem(item);
         });
