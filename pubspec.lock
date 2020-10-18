@@ -57,13 +57,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
-  flappy_search_bar:
-    dependency: "direct main"
-    description:
-      name: flappy_search_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.7.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -109,6 +102,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
+  search_bar:
+    dependency: "direct main"
+    description:
+      path: "lib/extentions/search_bar"
+      relative: true
+    source: path
+    version: "0.0.0"
   sky_engine:
     dependency: transitive
     description: flutter

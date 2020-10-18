@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:ver_1_by_sfc/ver_1_by_sfc.dart';
-import 'package:flappy_search_bar/flappy_search_bar.dart';
+import 'package:search_bar/search_bar.dart';
 
 import '../widgets/item_list_widget.dart';
 
