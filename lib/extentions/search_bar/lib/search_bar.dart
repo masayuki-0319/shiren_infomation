@@ -7,6 +7,7 @@ import 'dart:async';
 
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'scaled_tile.dart';
@@ -219,6 +220,9 @@ class SearchBar<T> extends StatefulWidget {
   /// Set a padding on the list
   final EdgeInsetsGeometry listPadding;
 
+  final TextInputType keyboardType;
+  final List<TextInputFormatter> inputFormatters;
+
   SearchBar({
     Key key,
     @required this.onSearch,
@@ -250,6 +254,8 @@ class SearchBar<T> extends StatefulWidget {
     this.listPadding = const EdgeInsets.all(0),
     this.searchBarPadding = const EdgeInsets.all(0),
     this.headerPadding = const EdgeInsets.all(0),
+    this.keyboardType = TextInputType.multiline,
+    this.inputFormatters = null,
   }) : super(key: key);
 
   @override
@@ -403,6 +409,8 @@ class _SearchBarState<T> extends State<SearchBar<T>>
                         child: TextField(
                           controller: _searchQueryController,
                           onChanged: _onTextChanged,
+                          keyboardType: widget.keyboardType,
+                          inputFormatters: widget.inputFormatters,
                           style: widget.textStyle,
                           decoration: InputDecoration(
                             icon: widget.icon,
