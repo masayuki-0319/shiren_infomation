@@ -6,20 +6,11 @@ import 'package:search_bar/search_bar.dart';
 
 import 'item_tile_widget.dart';
 
-class SearchAndResultWidget extends StatefulWidget {
+class SearchAndResultWidget extends StatelessWidget {
   final List<Item> itemList;
 
-  const SearchAndResultWidget({
-    Key key,
-    @required this.itemList,
-  })  : assert(itemList != null, 'arguments must not be null'),
-        super(key: key);
+  const SearchAndResultWidget({Key key, this.itemList}) : super(key: key);
 
-  @override
-  _SearchAndResultWidgetState createState() => _SearchAndResultWidgetState();
-}
-
-class _SearchAndResultWidgetState extends State<SearchAndResultWidget> {
   @override
   Widget build(BuildContext context) {
     return Scrollbar(
@@ -37,7 +28,7 @@ class _SearchAndResultWidgetState extends State<SearchAndResultWidget> {
   Future<List<Item>> _doSearch(String search) async {
     try {
       final parseSearch = int.parse(search);
-      final searchItems = widget.itemList;
+      final searchItems = itemList;
 
       var searchResult = searchItems
           .where((item) =>
