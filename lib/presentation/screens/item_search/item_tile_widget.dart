@@ -17,7 +17,7 @@ class ItemTileWidget extends StatelessWidget {
 
   Widget _buildLeading() {
     var itemIcon = Image.asset(
-        'lib/extentions/ver_1_by_sfc/assets/images/item_icon/${item.itemType}.png',
+        'lib/extention/ver_1_by_sfc/assets/images/item_icon/${item.itemType}.png',
         fit: BoxFit.cover);
 
     return ExcludeSemantics(

@@ -147,7 +147,7 @@ packages:
   search_bar:
     dependency: "direct main"
     description:
-      path: "lib/extentions/search_bar"
+      path: "lib/extention/search_bar"
       relative: true
     source: path
     version: "0.0.0"
@@ -222,7 +222,7 @@ packages:
   ver_1_by_sfc:
     dependency: "direct main"
     description:
-      path: "lib/extentions/ver_1_by_sfc"
+      path: "lib/extention/ver_1_by_sfc"
       relative: true
     source: path
     version: "0.0.0"
